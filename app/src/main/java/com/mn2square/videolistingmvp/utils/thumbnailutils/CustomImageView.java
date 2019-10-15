@@ -7,11 +7,13 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import androidx.appcompat.widget.AppCompatImageView;
+
 /**
  * Created by nitinagarwal on 3/24/17.
  */
 
-public class CustomImageView extends android.support.v7.widget.AppCompatImageView {
+public class CustomImageView extends AppCompatImageView {
 
     public static float radius = 10.0f;
 

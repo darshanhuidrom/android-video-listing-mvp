@@ -1,13 +1,14 @@
 package com.mn2square.videolistingmvp.activity.viewpageradapter;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 
 import com.mn2square.videolistingmvp.swipetabfragments.ListFragement.presenter.ListFragmentImpl;
 import com.mn2square.videolistingmvp.swipetabfragments.SavedListFragment.presenter.SavedListFragmentImpl;
 import com.mn2square.videolistingmvp.swipetabfragments.folderlistfragment.presenter.FolderListFragmentImpl;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 /**
  * Created by nitinagarwal on 3/15/17.

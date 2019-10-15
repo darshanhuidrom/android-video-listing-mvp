@@ -4,17 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
-import android.support.v7.widget.Toolbar;
+
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -27,10 +17,22 @@ import android.widget.Toast;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 import com.mn2square.videolistingmvp.R;
 import com.mn2square.videolistingmvp.activity.viewpageradapter.ViewPagerAdapter;
 import com.nineoldandroids.view.ViewHelper;
 import com.nineoldandroids.view.ViewPropertyAnimator;
+
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by nitinagarwal on 3/5/17.
@@ -66,7 +68,7 @@ public class VideoListingViewImpl implements ViewMvpVideoList, ViewMvpSearch, Se
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
         mPixelDensityFactor = metrics.densityDpi/160f;
         mRootView = LayoutInflater.from(context).inflate(R.layout.activity_main, container);
-        mViewPager = (ViewPager)mRootView.findViewById(R.id.viewpager);
+        mViewPager = mRootView.findViewById(R.id.viewpager);
         mViewPager.setCurrentItem(0);
         CharSequence[] titles =
                 {context.getResources().getString(R.string.folder_tab_name),

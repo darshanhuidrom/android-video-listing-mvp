@@ -1,8 +1,6 @@
 package com.mn2square.videolistingmvp.swipetabfragments.folderlistfragment.presenter;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -23,6 +21,9 @@ import com.mn2square.videolistingmvp.swipetabfragments.folderlistfragment.views.
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by nitinagarwal on 3/15/17.

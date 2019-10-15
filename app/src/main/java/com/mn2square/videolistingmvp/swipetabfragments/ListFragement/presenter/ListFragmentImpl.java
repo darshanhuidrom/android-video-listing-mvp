@@ -1,8 +1,6 @@
 package com.mn2square.videolistingmvp.swipetabfragments.ListFragement.presenter;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
@@ -19,6 +17,9 @@ import com.mn2square.videolistingmvp.activity.presenter.VideoUserInteraction;
 import com.mn2square.videolistingmvp.swipetabfragments.VideoListFragmentInterface.VideoListFragmentInterface;
 import com.mn2square.videolistingmvp.swipetabfragments.ListFragement.views.ListFragmentViewImpl;
 import com.mn2square.videolistingmvp.activity.presenter.manager.pojo.VideoListInfo;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * Created by nitinagarwal on 3/12/17.

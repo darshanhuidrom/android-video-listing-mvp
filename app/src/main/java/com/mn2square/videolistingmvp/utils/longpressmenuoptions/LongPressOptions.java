@@ -7,7 +7,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
-import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -17,6 +16,8 @@ import com.mn2square.videolistingmvp.R;
 import com.mn2square.videolistingmvp.activity.presenter.manager.VideoListUpdateManager;
 
 import java.io.File;
+
+import androidx.appcompat.app.AlertDialog;
 
 /**
  * Created by nitinagarwal on 3/21/17.

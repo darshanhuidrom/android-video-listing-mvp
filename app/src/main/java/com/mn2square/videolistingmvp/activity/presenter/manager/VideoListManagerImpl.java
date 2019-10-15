@@ -8,10 +8,11 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.v7.app.AppCompatActivity;
 
 import com.mn2square.videolistingmvp.activity.presenter.manager.pojo.VideoListInfo;
 import com.mn2square.videolistingmvp.utils.FolderListGenerator;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import static com.mn2square.videolistingmvp.activity.presenter.VideoListingActivity.DATE_ASC;
 import static com.mn2square.videolistingmvp.activity.presenter.VideoListingActivity.DATE_DESC;
@@ -29,16 +30,16 @@ public class VideoListManagerImpl implements LoaderManager.LoaderCallbacks<Curso
     private static final int URL_LOADER_EXTERNAL = 0;
 
     private static final String[] COLUMNS_OF_INTEREST = new String[]
-    {
-            MediaStore.Video.Media._ID,
-            MediaStore.Video.Media.DATA,
-            MediaStore.Video.Media.DISPLAY_NAME,
-            MediaStore.Video.Media.SIZE,
-            MediaStore.Video.Media.DURATION,
-            MediaStore.Video.Media.WIDTH,
-            MediaStore.Video.Media.HEIGHT,
-            MediaStore.Video.Media.DATE_ADDED
-    };
+            {
+                    MediaStore.Video.Media._ID,
+                    MediaStore.Video.Media.DATA,
+                    MediaStore.Video.Media.DISPLAY_NAME,
+                    MediaStore.Video.Media.SIZE,
+                    MediaStore.Video.Media.DURATION,
+                    MediaStore.Video.Media.WIDTH,
+                    MediaStore.Video.Media.HEIGHT,
+                    MediaStore.Video.Media.DATE_ADDED
+            };
     private static final String TAG = "videolistmvp";
 
     private Context mContext;
@@ -50,12 +51,11 @@ public class VideoListManagerImpl implements LoaderManager.LoaderCallbacks<Curso
 
     private int mSortingPreference;
 
-    public VideoListManagerImpl(Context context, int sortingPreference)
-    {
+    public VideoListManagerImpl(Context context, int sortingPreference) {
         mContext = context;
         mSortingPreference = sortingPreference;
 
-        mAppCompatActivity = (AppCompatActivity)context;
+        mAppCompatActivity = (AppCompatActivity) context;
         mAppCompatActivity.getLoaderManager().initLoader(URL_LOADER_EXTERNAL, null, this);
 
         mVideoListInfo = new VideoListInfo();
@@ -89,16 +89,14 @@ public class VideoListManagerImpl implements LoaderManager.LoaderCallbacks<Curso
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor)
-    {
-        if(cursor != null)
-        {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        if (cursor != null) {
             updateVideoList(cursor);
 
             FolderListGenerator.generateFolderHashMap(mVideoListInfo.getVideoListBackUp(),
                     mVideoListInfo.getFolderListHashMapBackUp());
 
-            if(mVideoListManagerListerner != null)
+            if (mVideoListManagerListerner != null)
                 mVideoListManagerListerner.onVideoListUpdate(mVideoListInfo);
         }
     }
@@ -106,9 +104,8 @@ public class VideoListManagerImpl implements LoaderManager.LoaderCallbacks<Curso
     @Override
     public void onLoaderReset(Loader<Cursor> loader) {
     }
-    
-    private void updateVideoList(Cursor cursor)
-    {
+
+    private void updateVideoList(Cursor cursor) {
         mVideoListInfo.clearAll();
         cursor.moveToFirst();
         int coloumnIndexUri = cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA);
@@ -153,7 +150,7 @@ public class VideoListManagerImpl implements LoaderManager.LoaderCallbacks<Curso
     public void updateForDeleteVideo(int id) {
         mContext.getContentResolver().delete(
                 MediaStore.Video.Media.EXTERNAL_CONTENT_URI,
-                MediaStore.Video.Media._ID+ "=" + id, null);
+                MediaStore.Video.Media._ID + "=" + id, null);
     }
 
     @Override

@@ -4,28 +4,28 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.mn2square.videolistingmvp.R;
+import com.mn2square.videolistingmvp.activity.presenter.manager.VideoListManager;
+import com.mn2square.videolistingmvp.activity.presenter.manager.VideoListManagerImpl;
+import com.mn2square.videolistingmvp.activity.presenter.manager.pojo.VideoListInfo;
+import com.mn2square.videolistingmvp.activity.views.VideoListingViewImpl;
+import com.mn2square.videolistingmvp.activity.views.ViewMvpSearch;
 import com.mn2square.videolistingmvp.swipetabfragments.ListFragement.presenter.ListFragmentImpl;
 import com.mn2square.videolistingmvp.swipetabfragments.SavedListFragment.presenter.SavedListFragmentImpl;
 import com.mn2square.videolistingmvp.swipetabfragments.folderlistfragment.presenter.FolderListFragmentImpl;
 import com.mn2square.videolistingmvp.utils.FolderListGenerator;
 import com.mn2square.videolistingmvp.utils.VideoSearch;
-import com.mn2square.videolistingmvp.activity.presenter.manager.pojo.VideoListInfo;
-import com.mn2square.videolistingmvp.activity.presenter.manager.VideoListManager;
-import com.mn2square.videolistingmvp.activity.presenter.manager.VideoListManagerImpl;
-import com.mn2square.videolistingmvp.activity.views.VideoListingViewImpl;
-import com.mn2square.videolistingmvp.activity.views.ViewMvpSearch;
 import com.mn2square.videolistingmvp.utils.longpressmenuoptions.LongPressOptions;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class VideoListingActivity extends AppCompatActivity
